@@ -1,3 +1,187 @@
-<HTML>
-  
-</HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breakfast with Santa | Shidle Lodge Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f8f8;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #eee0cb;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header img {
+      width: 260px;
+      height: auto;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 0 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+
+    .card h1 {
+      font-family: 'Libre Baskerville', serif;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .card h2 {
+      text-align: center;
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: normal;
+    }
+
+    .event-meta {
+      text-align: center;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 0.95rem;
+    }
+
+    .event-meta span {
+      display: block;
+    }
+
+    .event-details {
+      font-size: 0.98rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-details p {
+      margin: 0.3rem 0;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+    .cta {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta button, .cta a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      border: none;
+      background-color: #eee0cb;
+      color: #000;
+      font-weight: bold;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .cta button:hover, .cta a:hover {
+      background-color: #e0d2ba;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .form-container {
+      margin-top: 1.5rem;
+    }
+
+    .form-container iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      min-height: 700px; /* tweak once you see your form height */
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://shidlelodge601.org">
+      <img src="https://img1.wsimg.com/isteam/ip/1360334b-7327-47c2-8ca9-9c3529c88239/Shidle%20Masons_Logo_no%20background.png/:/rs=w:260,h:107,cg:true,m/cr=w:260,h:107/qt=q:95" alt="Shidle Lodge Logo">
+    </a>
+  </header>
+
+  <main>
+    <div class="card">
+      <h1>Breakfast with Santa</h1>
+      <h2>Hosted by Shidle Lodge No. 601</h2>
+
+      <div class="event-meta">
+        <span class="highlight">Saturday, December 13, 2025 • 9:00–11:00 AM</span>
+        <span>Shidle Lodge #601, 415 Main St, Irwin, PA 15642</span>
+      </div>
+
+      <div class="event-details">
+        <p>Enjoy fresh-flipped hotcakes, sausage, butter, syrup, and juice, plus a special visit from Santa.</p>
+        <p>There will be breakfast, photo opportunities, music, and fun for the whole family.</p>
+        <p class="highlight">Adults: $9 • Children 12 and under: $7</p>
+        <p class="highlight">Please RSVP by December 6, 2025 so that Santa is ready!</p>
+        <p style="font-size:0.9rem; margin-top:0.6rem;">
+          When you reserve, please tell us your child’s name, age, and whether they are a boy or a girl so Santa can prepare a special gift.
+        </p>
+      </div>
+
+      <div class="cta">
+        <a href="#reserve" id="reserveBtn">Reserve Your Seats</a>
+      </div>
+
+      <p class="note">
+        Step 1: Complete the form below. • Step 2: Follow the Venmo button on the confirmation screen to submit payment.
+      </p>
+
+      <div class="form-container" id="reserve">
+        <!-- Replace the iframe src with your actual Jotform URL -->
+        <iframe
+          title="Breakfast with Santa Reservation Form"
+          src="https://form.jotform.com/YOUR_JOTFORM_ID"
+          allowtransparency="true"
+          scrolling="yes">
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Shidle Lodge No. 601. All rights reserved.
+  </footer>
+</body>
+</html>
