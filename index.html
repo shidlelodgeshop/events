@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #f8f8f8;
+      background-color: #f5efe6;
       color: #000;
       line-height: 1.6;
     }
@@ -19,6 +19,7 @@
       background-color: #eee0cb;
       text-align: center;
       padding: 2rem 1rem;
+      border-bottom: 1px solid #d9cbb5;
     }
 
     header img {
@@ -34,80 +35,61 @@
 
     .card {
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      padding: 2.5rem;
     }
 
     .card h1 {
       font-family: 'Libre Baskerville', serif;
       text-align: center;
       margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.8rem;
+      font-size: 2.1rem;
+      margin-bottom: 0.3rem;
     }
 
     .card h2 {
       text-align: center;
-      margin: 0;
-      font-size: 1.1rem;
+      margin-top: 0;
+      color: #444;
+      font-size: 1.15rem;
       font-weight: normal;
+      margin-bottom: 1.2rem;
     }
 
     .event-meta {
       text-align: center;
-      margin: 1.25rem 0 1.75rem;
-      font-size: 0.95rem;
+      margin: 1.4rem 0 1.9rem;
+      font-size: 1rem;
     }
 
     .event-meta span {
       display: block;
-    }
-
-    .event-details {
-      font-size: 0.98rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .event-details p {
-      margin: 0.3rem 0;
+      margin-bottom: 0.25rem;
     }
 
     .highlight {
       font-weight: bold;
+      font-size: 1.05rem;
     }
 
-    .cta {
+    .event-details p {
+      margin: 0.4rem 0;
+      font-size: 1rem;
+    }
+
+    .holiday-box {
+      background: #eee0cb;
+      padding: 1.1rem;
+      border-radius: 8px;
+      margin: 1.4rem 0;
+      border: 1px solid #d6c5ae;
       text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta button, .cta a {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      border: none;
-      background-color: #eee0cb;
-      color: #000;
-      font-weight: bold;
-      font-size: 0.95rem;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .cta button:hover, .cta a:hover {
-      background-color: #e0d2ba;
-    }
-
-    .note {
-      font-size: 0.85rem;
-      text-align: center;
-      color: #555;
-      margin-bottom: 1rem;
+      font-size: 1rem;
     }
 
     .form-container {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
 
     footer {
@@ -121,7 +103,7 @@
 
     @media (max-width: 600px) {
       .card {
-        padding: 1.5rem;
+        padding: 1.7rem;
       }
     }
   </style>
@@ -136,34 +118,28 @@
   <main>
     <div class="card">
       <h1>Breakfast with Santa</h1>
-      <h2>Hosted by Shidle Lodge No. 601</h2>
+      <h2>A Holiday Tradition at Shidle Lodge No. 601</h2>
 
       <div class="event-meta">
         <span class="highlight">Saturday, December 13, 2025 • 9:00–11:00 AM</span>
-        <span>Shidle Lodge #601, 415 Main St, Irwin, PA 15642</span>
+        <span>Shidle Lodge No. 601 • 415 Main St • Irwin, PA 15642</span>
       </div>
 
       <div class="event-details">
-        <p>Enjoy fresh-flipped hotcakes, sausage, butter, syrup, and juice, plus a special visit from Santa.</p>
-        <p>There will be breakfast, photo opportunities, music, and fun for the whole family.</p>
-        <p class="highlight">Adults: $9 • Children 12 and under: $7</p>
-        <p class="highlight">Please RSVP by December 6, 2025 so that Santa is ready!</p>
-        <p style="font-size:0.9rem; margin-top:0.6rem;">
-          When you reserve, please tell us your child’s name, age, and whether they are a boy or a girl so Santa can prepare a special gift.
-        </p>
+        <p>Start your holiday season with a warm, family-friendly breakfast at Shidle Lodge. Enjoy hotcakes fresh off the griddle, sausage, butter, syrup, juice, and plenty of holiday cheer.</p>
+        <p>Santa Claus will be visiting for photos, conversation, and Christmas magic. There will be music, decorations, and joyful moments for children and adults alike.</p>
       </div>
 
-      <div class="cta">
-        <a href="#reserve" id="reserveBtn">Reserve Your Seats</a>
+      <div class="holiday-box">
+        Adults: $9 • Children 12 and under: $7<br>
+        Please RSVP by December 6 so Santa can be prepared!
       </div>
 
-      <p class="note">
-        Step 1: Complete the form below. • Step 2: Follow the Venmo button on the confirmation screen to submit payment.
+      <p style="font-size:0.95rem; margin-top:1rem; text-align:center;">
+        When reserving, please include each child’s name, age, and whether they are a boy or girl so Santa can prepare a small gift.
       </p>
 
       <div class="form-container" id="reserve">
-
-        <!-- YOUR JOTFORM IFRAME EMBED -->
         <iframe
           id="JotFormIFrame-253176060004041"
           title="Breakfast with Santa Signup"
@@ -180,8 +156,8 @@
         <script>
           window.jotformEmbedHandler("iframe[id='JotFormIFrame-253176060004041']", "https://form.jotform.com/")
         </script>
-
       </div>
+
     </div>
   </main>
 
