@@ -110,13 +110,6 @@
       margin-top: 1.5rem;
     }
 
-    .form-container iframe {
-      width: 100%;
-      border: none;
-      border-radius: 8px;
-      min-height: 700px; /* tweak once you see your form height */
-    }
-
     footer {
       background-color: #222;
       color: #ccc;
@@ -169,13 +162,25 @@
       </p>
 
       <div class="form-container" id="reserve">
-        <!-- Replace the iframe src with your actual Jotform URL -->
+
+        <!-- YOUR JOTFORM IFRAME EMBED -->
         <iframe
-          title="Breakfast with Santa Reservation Form"
-          src="https://form.jotform.com/YOUR_JOTFORM_ID"
+          id="JotFormIFrame-253176060004041"
+          title="Breakfast with Santa Signup"
+          onload="window.parent.scrollTo(0,0)"
           allowtransparency="true"
-          scrolling="yes">
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/253176060004041"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:900px;border:none;"
+          scrolling="no">
         </iframe>
+
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>
+          window.jotformEmbedHandler("iframe[id='JotFormIFrame-253176060004041']", "https://form.jotform.com/")
+        </script>
+
       </div>
     </div>
   </main>
