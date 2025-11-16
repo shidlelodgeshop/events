@@ -1,14 +1,13 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Breakfast with Santa | Shidle Lodge Events</title>
+  <title>Past Master's Night | Shidle Lodge Events</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -17,7 +16,7 @@
       line-height: 1.6;
     }
 
-    /* === NAV BAR === */
+    /* NAV BAR */
     .event-nav {
       background: #d7c7b1;
       border-bottom: 2px solid #c8b99f;
@@ -30,13 +29,12 @@
       color: #333;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem; /* larger text */
+      font-size: 1.1rem;
       padding-bottom: 6px;
       border-bottom: 2px solid transparent;
       transition: 0.2s ease;
     }
 
-    /* BLUE hover + active underline */
     .event-nav a:hover {
       color: #1756ff;
       border-bottom: 2px solid #1756ff;
@@ -47,7 +45,7 @@
       border-bottom: 2px solid #1756ff;
     }
 
-    /* === HEADER === */
+    /* HEADER */
     header {
       background: linear-gradient(to bottom, #eee0cb, #e2d2b8);
       text-align: center;
@@ -60,7 +58,6 @@
       height: auto;
     }
 
-    /* === MAIN CARD === */
     main {
       max-width: 920px;
       margin: 2rem auto 3rem;
@@ -73,11 +70,12 @@
       padding: 0;
       box-shadow: 0 5px 20px rgba(0,0,0,0.1);
       overflow: hidden;
+      margin-bottom: 3rem;
     }
 
-    /* === TITLE BAR === */
+    /* BLUE TITLE BAR FOR PMN */
     .title-bar {
-      background: linear-gradient(135deg, #c73644 0%, #a0222c 100%);
+      background: linear-gradient(135deg, #1f3c88 0%, #0e224a 100%);
       color: #fff;
       text-align: center;
       padding: 2.5rem 1rem;
@@ -99,33 +97,8 @@
       opacity: 0.95;
     }
 
-    /* === CONTENT === */
     .inner-content {
       padding: 2.2rem 2.5rem;
-    }
-
-    .event-meta {
-      text-align: center;
-      margin-bottom: 2.4rem;
-    }
-
-    .event-meta .highlight {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      font-size: 1.35rem;
-      color: #7a1e26;
-      letter-spacing: 0.3px;
-    }
-
-    .event-meta span:nth-child(2) {
-      font-size: 1rem;
-      color: #444;
-    }
-
-    /* === SECTIONS === */
-    .event-sections {
-      margin-bottom: 2rem;
     }
 
     .section {
@@ -133,36 +106,24 @@
       border: 1px solid #e4d8c8;
       padding: 1.2rem 1.4rem;
       border-radius: 8px;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
       box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
     }
 
     .section h3 {
       margin: 0 0 0.4rem;
       font-family: 'Libre Baskerville', serif;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #6a1b21;
-      letter-spacing: 0.3px;
     }
 
     .section p {
       margin: 0;
-      font-size: 0.96rem;
+      font-size: 0.97rem;
       color: #333;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
-    /* === FORM === */
-    .form-container {
-      margin-top: 2.4rem;
-      background: #fffaf2;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 1px solid #e1d3c2;
-      box-shadow: 0 2px 7px rgba(0,0,0,0.07);
-    }
-
-    /* === FOOTER === */
     footer {
       background-color: #222;
       color: #ccc;
@@ -171,103 +132,86 @@
       margin-top: 3rem;
       font-size: 0.9rem;
     }
-
-    @media (max-width: 600px) {
-      .inner-content { padding: 1.6rem 1.3rem; }
-      .form-container { padding: 1rem; }
-      .event-nav a { font-size: 1rem; }
-      .event-meta .highlight { font-size: 1.2rem; }
-    }
-
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER WITH LOGO -->
+  <!-- HEADER -->
   <header>
     <a href="https://shidlelodge601.org">
       <img src="https://img1.wsimg.com/isteam/ip/1360334b-7327-47c2-8ca9-9c3529c88239/Shidle%20Masons_Logo_no%20background.png/:/rs=w:260,h:107,cg=true,m/cr=w:260,h:107/qt=q:95" alt="Shidle Lodge Logo">
     </a>
   </header>
 
-  <!-- NAV BAR NOW UNDER LOGO -->
+  <!-- NAV BAR -->
   <nav class="event-nav">
-    <a href="/PMN">Past Master's Night</a>
-    <a href="/golf">Friend to Friend Golf Outing</a>
-    <a href="/" class="active">Breakfast with Santa</a>
+    <a href="/events/PMN/" class="active">Past Master's Night</a>
+    <a href="/events/golf/">Friend to Friend Golf Outing</a>
+    <a href="/events/">Breakfast with Santa</a>
   </nav>
 
   <main>
+
+    <!-- PMN CARD -->
     <div class="card">
 
-      <!-- TITLE BAR -->
       <div class="title-bar">
-        <h1>Breakfast with Santa</h1>
-        <h2>A Holiday Tradition at Shidle Lodge No. 601</h2>
+        <h1>Past Master's Night</h1>
+        <h2>Honoring Leadership, Legacy & Service</h2>
       </div>
 
-      <!-- CONTENT -->
       <div class="inner-content">
 
-        <!-- ENHANCED DATE/TIME -->
-        <div class="event-meta">
-          <span class="highlight">Saturday, December 13, 2025 • 9:00–11:00 AM</span>
-          <span>Shidle Lodge No. 601 • 415 Main St • Irwin, PA 15642</span>
+        <div class="section">
+          <h3>Spring 2026 • Date to be Announced</h3>
+          <p>
+            Each spring, Shidle Lodge No. 601 gathers for a special evening dedicated to honoring our Past Masters—both living and deceased—whose
+            leadership, guidance, and commitment have shaped our Lodge across generations.
+          </p>
         </div>
 
-        <!-- EVENT INFO SECTIONS -->
-        <div class="event-sections">
-
-          <div class="section">
-            <h3>About the Event</h3>
-            <p>Start the holiday season with a warm breakfast inside Shidle Lodge and a joyful morning visit with Santa. Enjoy food, family time, and Christmas cheer.</p>
-          </div>
-
-          <div class="section">
-            <h3>Menu</h3>
-            <p>Hotcakes, sausage, butter, syrup, juice, and coffee.</p>
-          </div>
-
-          <div class="section">
-            <h3>Santa Visit</h3>
-            <p>Every child will get time with Santa. Please include each child’s name, age, and whether they are a boy or girl so Santa can prepare a small gift.</p>
-          </div>
-
-          <div class="section">
-            <h3>Admission</h3>
-            <p>Adults: $9<br>Children 12 and under: $7</p>
-          </div>
-
-          <div class="section">
-            <h3>RSVP Deadline</h3>
-            <p>Please reserve your seats by December 6, 2025.</p>
-          </div>
-
+        <div class="section">
+          <h3>50-Year Service Pin Ceremony</h3>
+          <p>
+            During the evening’s ceremony, we proudly recognize brethren who have reached the remarkable milestone of 50 years of Masonic service.
+            Family members and close friends are encouraged to attend and share in this meaningful celebration.
+          </p>
         </div>
 
-        <!-- FORM -->
-        <div class="form-container" id="reserve">
+        <div class="section">
+          <h3>Registration Opens Spring 2026</h3>
+          <p>
+            Dinner registration will open in the spring once final details are released. Please check back for updates.
+          </p>
+        </div>
+
+        <!-- HIDDEN JOTFORM -->
+        <div style="display:none;">
           <iframe
-            id="JotFormIFrame-253176060004041"
-            title="Breakfast with Santa Signup"
+            id="JotFormIFrame-250914253262149"
+            title="Past Master's Night Dinner"
             onload="window.parent.scrollTo(0,0)"
             allowtransparency="true"
-            allow="geolocation; microphone; camera; fullscreen; payment"
-            src="https://form.jotform.com/253176060004041"
+            allow="geolocation; microphone; camera; fullscreen"
+            src="https://form.jotform.com/250914253262149"
             frameborder="0"
-            style="min-width:100%;max-width:100%;height:900px;border:none;"
-            scrolling="no">
-          </iframe>
+            style="min-width:100%;max-width:100%;height:539px;border:none;"
+            scrolling="no"
+          ></iframe>
 
           <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
           <script>
-            window.jotformEmbedHandler("iframe[id='JotFormIFrame-253176060004041']", "https://form.jotform.com/");
+            window.jotformEmbedHandler(
+              "iframe[id='JotFormIFrame-250914253262149']",
+              "https://form.jotform.com/"
+            );
           </script>
         </div>
 
       </div>
     </div>
+
   </main>
 
   <footer>
