@@ -59,7 +59,7 @@
 
     .event-meta {
       text-align: center;
-      margin: 1.4rem 0 1.9rem;
+      margin: 1.4rem 0 2rem;
       font-size: 1rem;
     }
 
@@ -73,19 +73,31 @@
       font-size: 1.05rem;
     }
 
-    .event-details p {
-      margin: 0.4rem 0;
-      font-size: 1rem;
+    /* Section Blocks */
+    .event-sections {
+      margin-bottom: 2rem;
     }
 
-    .holiday-box {
-      background: #eee0cb;
-      padding: 1.1rem;
+    .section {
+      background: #faf7f1;
+      border: 1px solid #e3d7c6;
+      padding: 1.2rem 1.4rem;
       border-radius: 8px;
-      margin: 1.4rem 0;
-      border: 1px solid #d6c5ae;
-      text-align: center;
-      font-size: 1rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .section h3 {
+      margin: 0 0 0.4rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.1rem;
+      color: #000;
+    }
+
+    .section p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.45;
     }
 
     .form-container {
@@ -125,20 +137,37 @@
         <span>Shidle Lodge No. 601 • 415 Main St • Irwin, PA 15642</span>
       </div>
 
-      <div class="event-details">
-        <p>Start your holiday season with a warm, family-friendly breakfast at Shidle Lodge. Enjoy hotcakes fresh off the griddle, sausage, butter, syrup, juice, and plenty of holiday cheer.</p>
-        <p>Santa Claus will be visiting for photos, conversation, and Christmas magic. There will be music, decorations, and joyful moments for children and adults alike.</p>
+      <!-- NEW CLEAN SECTIONED EVENT INFO -->
+      <div class="event-sections">
+
+        <div class="section">
+          <h3>About the Event</h3>
+          <p>Join us for a warm holiday breakfast and a festive morning with Santa. Enjoy good food, family fun, and a magical Christmas atmosphere inside the Lodge.</p>
+        </div>
+
+        <div class="section">
+          <h3>Menu</h3>
+          <p>Hotcakes, sausage, butter, syrup, juice, and coffee.</p>
+        </div>
+
+        <div class="section">
+          <h3>Santa Visit</h3>
+          <p>Every child will have the chance to meet Santa. Please include each child’s name, age, and whether they are a boy or girl so Santa can prepare a small gift.</p>
+        </div>
+
+        <div class="section">
+          <h3>Admission</h3>
+          <p>Adults: $9<br>Children 12 and under: $7</p>
+        </div>
+
+        <div class="section">
+          <h3>RSVP Deadline</h3>
+          <p>Please reserve your seats by December 6, 2025.</p>
+        </div>
+
       </div>
 
-      <div class="holiday-box">
-        Adults: $9 • Children 12 and under: $7<br>
-        Please RSVP by December 6 so Santa can be prepared!
-      </div>
-
-      <p style="font-size:0.95rem; margin-top:1rem; text-align:center;">
-        Please include each child’s name, age, and whether they are a boy or girl so Santa can prepare a small gift.
-      </p>
-
+      <!-- JOTFORM EMBED -->
       <div class="form-container" id="reserve">
         <iframe
           id="JotFormIFrame-253176060004041"
@@ -154,7 +183,10 @@
 
         <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
         <script>
-          window.jotformEmbedHandler("iframe[id='JotFormIFrame-253176060004041']", "https://form.jotform.com/")
+          window.jotformEmbedHandler(
+            "iframe[id='JotFormIFrame-253176060004041']",
+            "https://form.jotform.com/"
+          );
         </script>
       </div>
 
