@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,6 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -31,13 +33,12 @@
       color: #333;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem; /* larger text */
+      font-size: 1.1rem;
       padding-bottom: 6px;
       border-bottom: 2px solid transparent;
       transition: 0.2s ease;
     }
 
-    /* BLUE hover + active underline */
     .event-nav a:hover {
       color: #1756ff;
       border-bottom: 2px solid #1756ff;
@@ -124,6 +125,29 @@
       color: #444;
     }
 
+    /* === CTA BUTTON === */
+    .cta-button {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-button a {
+      background: #c73644;
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button a:hover {
+      background: #a0222c;
+    }
+
     /* === SECTIONS === */
     .event-sections {
       margin-bottom: 2rem;
@@ -179,7 +203,6 @@
       .event-nav a { font-size: 1rem; }
       .event-meta .highlight { font-size: 1.2rem; }
     }
-
   </style>
 </head>
 
@@ -192,7 +215,7 @@
     </a>
   </header>
 
-  <!-- NAV BAR NOW UNDER LOGO -->
+  <!-- NAV BAR UNDER LOGO -->
   <nav class="event-nav">
     <a href="/PMN">Past Master's Night</a>
     <a href="/golf">Friend to Friend Golf Outing</a>
@@ -211,15 +234,19 @@
       <!-- CONTENT -->
       <div class="inner-content">
 
-        <!-- ENHANCED DATE/TIME -->
+        <!-- EVENT DATE & LOCATION -->
         <div class="event-meta">
           <span class="highlight">Saturday, December 13, 2025 • 9:00–11:00 AM</span>
           <span>Shidle Lodge No. 601 • 415 Main St • Irwin, PA 15642</span>
         </div>
 
+        <!-- REGISTER BUTTON -->
+        <div class="cta-button">
+          <a href="#reserve">Register Now</a>
+        </div>
+
         <!-- EVENT INFO SECTIONS -->
         <div class="event-sections">
-
           <div class="section">
             <h3>About the Event</h3>
             <p>Start the holiday season with a warm breakfast inside Shidle Lodge and a joyful morning visit with Santa. Enjoy food, family time, and Christmas cheer.</p>
@@ -244,7 +271,6 @@
             <h3>RSVP Deadline</h3>
             <p>Please reserve your seats by December 6, 2025.</p>
           </div>
-
         </div>
 
         <!-- FORM -->
@@ -270,3 +296,9 @@
       </div>
     </div>
   </main>
+
+  <footer>
+    &copy; 2025 Shidle Lodge No. 601. All rights reserved.
+  </footer>
+</body>
+</html>
