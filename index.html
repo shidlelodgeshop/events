@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +9,6 @@
 
   <style>
 
-    /* === GLOBAL LAYOUT === */
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -18,11 +17,40 @@
       line-height: 1.6;
     }
 
+    /* === NAV BAR === */
+    .event-nav {
+      background: #d7c7b1;
+      border-bottom: 2px solid #c8b99f;
+      text-align: center;
+      padding: 0.8rem 0;
+    }
+
+    .event-nav a {
+      margin: 0 1.3rem;
+      color: #5a3b33;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding-bottom: 6px;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .event-nav a:hover {
+      color: #8a2a32;
+      border-bottom: 2px solid #8a2a32;
+    }
+
+    .event-nav a.active {
+      color: #8a2a32;
+      border-bottom: 2px solid #8a2a32;
+    }
+
     /* === HEADER === */
     header {
       background: linear-gradient(to bottom, #eee0cb, #e2d2b8);
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1.5rem;
       border-bottom: 2px solid #d0c0a7;
     }
 
@@ -51,43 +79,48 @@
       background: linear-gradient(135deg, #c73644 0%, #a0222c 100%);
       color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
       border-bottom: 3px solid #d9cbb5;
     }
 
     .title-bar h1 {
       margin: 0;
       font-family: 'Libre Baskerville', serif;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       letter-spacing: 0.5px;
     }
 
     .title-bar h2 {
-      margin: 0.5rem 0 0;
+      margin: 0.8rem 0 0;
       font-weight: normal;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       opacity: 0.95;
-      font-family: 'Roboto', sans-serif;
     }
 
-    /* === EVENT INFO AREA === */
+    /* === CONTENT === */
     .inner-content {
       padding: 2.2rem 2.5rem;
     }
 
     .event-meta {
       text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1rem;
+      margin-bottom: 2.4rem;
     }
 
+    /* BIGGER DATE/TIME LINE */
     .event-meta .highlight {
       display: block;
-      font-weight: bold;
+      font-weight: 700;
       margin-bottom: 0.35rem;
-      font-size: 1.08rem;
+      font-size: 1.35rem;
       color: #7a1e26;
+      letter-spacing: 0.3px;
+    }
+
+    .event-meta span:nth-child(2) {
+      font-size: 1rem;
+      color: #444;
     }
 
     /* === SECTIONS === */
@@ -121,7 +154,7 @@
 
     /* === FORM === */
     .form-container {
-      margin-top: 2.2rem;
+      margin-top: 2.4rem;
       background: #fffaf2;
       padding: 1.5rem;
       border-radius: 10px;
@@ -146,6 +179,9 @@
       .form-container {
         padding: 1rem;
       }
+      .event-meta .highlight {
+        font-size: 1.2rem;
+      }
     }
 
   </style>
@@ -153,9 +189,17 @@
 
 <body>
 
+  <!-- TOP NAV BAR -->
+  <nav class="event-nav">
+    <a href="#" >Past Master's Night</a>
+    <a href="#">Friend to Friend Golf Outing</a>
+    <a href="#" class="active">Breakfast with Santa</a>
+  </nav>
+
+  <!-- HEADER -->
   <header>
     <a href="https://shidlelodge601.org">
-      <img src="https://img1.wsimg.com/isteam/ip/1360334b-7327-47c2-8ca9-9c3529c88239/Shidle%20Masons_Logo_no%20background.png/:/rs=w:260,h:107,cg:true,m/cr=w:260,h:107/qt=q:95" alt="Shidle Lodge Logo">
+      <img src="https://img1.wsimg.com/isteam/ip/1360334b-7327-47c2-8ca9-9c3529c88239/Shidle%20Masons_Logo_no%20background.png/:/rs=w:260,h:107,cg=true,m/cr=w:260,h:107/qt=q:95" alt="Shidle Lodge Logo">
     </a>
   </header>
 
@@ -168,14 +212,16 @@
         <h2>A Holiday Tradition at Shidle Lodge No. 601</h2>
       </div>
 
-      <!-- CONTENT -->
+      <!-- CONTENT AREA -->
       <div class="inner-content">
 
+        <!-- BIGGER DATE/TIME -->
         <div class="event-meta">
           <span class="highlight">Saturday, December 13, 2025 • 9:00–11:00 AM</span>
           <span>Shidle Lodge No. 601 • 415 Main St • Irwin, PA 15642</span>
         </div>
 
+        <!-- SECTIONED INFO -->
         <div class="event-sections">
 
           <div class="section">
@@ -205,7 +251,7 @@
 
         </div>
 
-        <!-- FORM -->
+        <!-- FORM EMBED -->
         <div class="form-container" id="reserve">
           <iframe
             id="JotFormIFrame-253176060004041"
@@ -221,10 +267,7 @@
 
           <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
           <script>
-            window.jotformEmbedHandler(
-              "iframe[id='JotFormIFrame-253176060004041']",
-              "https://form.jotform.com/"
-            );
+            window.jotformEmbedHandler("iframe[id='JotFormIFrame-253176060004041']", "https://form.jotform.com/");
           </script>
         </div>
 
