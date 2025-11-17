@@ -2,229 +2,246 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Breakfast with Santa | Shidle Lodge Events</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root{
+      --ink:#000;
+      --bg:#f3efe6;
+      --panel:#fffdf8;
+      --accent:#c73644;
+      --accent-dark:#a0222c;
+      --tan:#d7c7b1;
+      --tan-border:#c8b99f;
     }
 
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #f3efe6;
-      color: #000;
-      line-height: 1.6;
+    /* Global fit guards */
+    html, body { width:100%; max-width:100%; overflow-x:hidden; }
+    * { box-sizing:border-box; }
+    img, iframe, video { max-width:100%; height:auto; }
+    html { scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      font-family:'Roboto',system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+      -webkit-text-size-adjust:100%;
+      text-rendering:optimizeLegibility;
     }
 
-    /* === NAV BAR === */
-    .event-nav {
-      background: #d7c7b1;
-      border-bottom: 2px solid #c8b99f;
-      text-align: center;
-      padding: 1rem 0;
+    /* ===== NAV BAR (wraps, no horizontal scroll) ===== */
+    .event-nav{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background:var(--tan);
+      border-bottom:2px solid var(--tan-border);
+      padding:0.55rem 0.5rem;
+
+      display:flex;
+      flex-wrap:wrap;          /* ✅ allow wrapping instead of scrolling */
+      justify-content:center;
+      align-items:center;
+      gap:0.9rem 1.1rem;       /* row / column gaps */
+
+      white-space:normal;      /* ✅ allow line breaks */
+    }
+    .event-nav a{
+      color:#333;
+      text-decoration:none;
+      font-weight:700;
+      font-size:clamp(0.95rem, 1.2vw + 0.6rem, 1.1rem);
+      padding:0.2rem 0;
+      border-bottom:2px solid transparent;
+      display:inline-block;
+      transition:color .2s ease, border-color .2s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .event-nav a:hover,
+    .event-nav a.active{
+      color:#1756ff;
+      border-bottom-color:#1756ff;
     }
 
-    .event-nav a {
-      margin: 0 1.5rem;
-      color: #333;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      padding-bottom: 6px;
-      border-bottom: 2px solid transparent;
-      transition: 0.2s ease;
+    /* ===== HEADER ===== */
+    header{
+      background:linear-gradient(to bottom,#eee0cb,#e2d2b8);
+      text-align:center;
+      padding:clamp(1rem, 2vw + 0.8rem, 1.75rem) 1rem 1rem;
+      border-bottom:2px solid #d0c0a7;
+    }
+    header img{
+      width:min(260px,70vw);
+      height:auto;
+      display:block;
+      margin:0 auto;
     }
 
-    .event-nav a:hover {
-      color: #1756ff;
-      border-bottom: 2px solid #1756ff;
+    /* ===== LAYOUT ===== */
+    main{
+      max-width:920px;
+      margin:clamp(0.8rem, 2vw + 0.5rem, 1.6rem) auto 2.2rem;
+      padding:0 1rem;
+    }
+    .card{
+      background:var(--panel);
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 5px 20px rgba(0,0,0,.08);
     }
 
-    .event-nav a.active {
-      color: #1756ff;
-      border-bottom: 2px solid #1756ff;
+    /* ===== TITLE BAR ===== */
+    .title-bar{
+      background:linear-gradient(135deg,var(--accent) 0%, var(--accent-dark) 100%);
+      color:#fff;
+      text-align:center;
+      padding:clamp(1.1rem, 3vw + 0.5rem, 2rem) 1rem;
+      border-bottom:3px solid #d9cbb5;
+    }
+    .title-bar h1{
+      margin:0;
+      font-family:'Libre Baskerville',serif;
+      font-weight:700;
+      letter-spacing:.3px;
+      font-size:clamp(1.5rem, 2.4vw + 1rem, 2.4rem);
+      line-height:1.15;
+    }
+    .title-bar h2{
+      margin:.55rem 0 0;
+      font-weight:400;
+      opacity:.95;
+      font-size:clamp(1rem, 1.2vw + .6rem, 1.2rem);
     }
 
-    /* === HEADER === */
-    header {
-      background: linear-gradient(to bottom, #eee0cb, #e2d2b8);
-      text-align: center;
-      padding: 2rem 1rem 1.5rem;
-      border-bottom: 2px solid #d0c0a7;
+    /* ===== CONTENT ===== */
+    .inner-content{ padding:clamp(1rem, 2.2vw + .6rem, 2rem) clamp(1rem, 2vw + .6rem, 1.8rem); }
+
+    .event-meta{
+      text-align:center;
+      margin-bottom:clamp(1rem, 2.2vw + .6rem, 1.8rem);
+      hyphens:auto;           /* allow gentle wrapping of long lines */
+      word-break:normal;
+    }
+    .event-meta .highlight{
+      display:block;
+      font-weight:800;
+      margin-bottom:.35rem;
+      font-size:clamp(1.05rem, 1.2vw + .8rem, 1.3rem);
+      color:#7a1e26;
+      letter-spacing:.2px;
+      line-height:1.25;
+    }
+    .event-meta .subline{
+      display:block;
+      font-size:clamp(.95rem, 1vw + .6rem, 1.05rem);
+      color:#444;
+      line-height:1.35;
     }
 
-    header img {
-      width: 260px;
-      height: auto;
+    /* ===== CTA BUTTON ===== */
+    .cta-button{
+      text-align:center;
+      margin:0 0 clamp(1.1rem, 2vw + .5rem, 1.8rem);
+    }
+    .cta-button a{
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      padding:.75rem 1.15rem;
+      font-size:clamp(1rem, 1.2vw + .6rem, 1.1rem);
+      border-radius:10px;
+      font-weight:800;
+      box-shadow:0 4px 10px rgba(0,0,0,.1);
+      display:inline-block;
+      transition:background .25s ease, transform .05s ease;
+    }
+    .cta-button a:active{ transform:scale(.98); }
+    .cta-button a:hover{ background:var(--accent-dark); }
+
+    /* ===== SECTIONS ===== */
+    .event-sections{ margin-bottom:1.25rem; }
+    .section{
+      background:#faf5eb;
+      border:1px solid #e4d8c8;
+      padding:clamp(.85rem, 1.4vw + .45rem, 1.15rem);
+      border-radius:10px;
+      margin-bottom:clamp(.75rem, 1.1vw + .4rem, 1rem);
+      box-shadow:inset 0 1px 4px rgba(0,0,0,.04);
+    }
+    .section h3{
+      margin:0 0 .35rem;
+      font-family:'Libre Baskerville',serif;
+      font-size:clamp(1.05rem, 1.2vw + .7rem, 1.2rem);
+      color:#6a1b21;
+      letter-spacing:.2px;
+    }
+    .section p{
+      margin:0;
+      font-size:clamp(.95rem, .7vw + .7rem, 1rem);
+      color:#333;
+      line-height:1.5;
     }
 
-    /* === MAIN CARD === */
-    main {
-      max-width: 920px;
-      margin: 2rem auto 3rem;
-      padding: 0 1rem;
+    /* ===== FORM ===== */
+    .form-container{
+      margin-top:clamp(1.1rem, 2.2vw + .5rem, 1.8rem);
+      background:#fffaf2;
+      padding:clamp(.9rem, 2vw + .5rem, 1.4rem);
+      border-radius:12px;
+      border:1px solid #e1d3c2;
+      box-shadow:0 2px 8px rgba(0,0,0,.07);
+    }
+    .form-container iframe{
+      width:100%;
+      min-height:900px; /* Jotform full form */
+      border:0;
+      display:block;
     }
 
-    .card {
-      background: #fffdf8;
-      border-radius: 12px;
-      padding: 0;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      overflow: hidden;
+    /* ===== FOOTER ===== */
+    footer{
+      background:#222;
+      color:#ccc;
+      text-align:center;
+      padding:1.6rem 1rem;
+      margin-top:2.2rem;
+      font-size:.95rem;
     }
 
-    /* === TITLE BAR === */
-    .title-bar {
-      background: linear-gradient(135deg, #c73644 0%, #a0222c 100%);
-      color: #fff;
-      text-align: center;
-      padding: 2.5rem 1rem;
-      border-bottom: 3px solid #d9cbb5;
-    }
-
-    .title-bar h1 {
-      margin: 0;
-      font-family: 'Libre Baskerville', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .title-bar h2 {
-      margin: 0.8rem 0 0;
-      font-weight: normal;
-      font-size: 1.2rem;
-      opacity: 0.95;
-    }
-
-    /* === CONTENT === */
-    .inner-content {
-      padding: 2.2rem 2.5rem;
-    }
-
-    .event-meta {
-      text-align: center;
-      margin-bottom: 2.4rem;
-    }
-
-    .event-meta .highlight {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      font-size: 1.35rem;
-      color: #7a1e26;
-      letter-spacing: 0.3px;
-    }
-
-    .event-meta span:nth-child(2) {
-      font-size: 1rem;
-      color: #444;
-    }
-
-    /* === CTA BUTTON === */
-    .cta-button {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .cta-button a {
-      background: #c73644;
-      color: white;
-      text-decoration: none;
-      padding: 12px 28px;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      display: inline-block;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button a:hover {
-      background: #a0222c;
-    }
-
-    /* === SECTIONS === */
-    .event-sections {
-      margin-bottom: 2rem;
-    }
-
-    .section {
-      background: #faf5eb;
-      border: 1px solid #e4d8c8;
-      padding: 1.2rem 1.4rem;
-      border-radius: 8px;
-      margin-bottom: 1.2rem;
-      box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
-    }
-
-    .section h3 {
-      margin: 0 0 0.4rem;
-      font-family: 'Libre Baskerville', serif;
-      font-size: 1.1rem;
-      color: #6a1b21;
-      letter-spacing: 0.3px;
-    }
-
-    .section p {
-      margin: 0;
-      font-size: 0.96rem;
-      color: #333;
-      line-height: 1.45;
-    }
-
-    /* === FORM === */
-    .form-container {
-      margin-top: 2.4rem;
-      background: #fffaf2;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 1px solid #e1d3c2;
-      box-shadow: 0 2px 7px rgba(0,0,0,0.07);
-    }
-
-    /* === FOOTER === */
-    footer {
-      background-color: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .inner-content { padding: 1.6rem 1.3rem; }
-      .form-container { padding: 1rem; }
-      .event-nav a { font-size: 1rem; }
-      .event-meta .highlight { font-size: 1.2rem; }
+    /* ===== SMALL DEVICES ===== */
+    @media (max-width: 480px){
+      .event-nav { gap:.6rem .8rem; padding:.5rem .4rem; }
+      .title-bar { padding:1rem .8rem; }
+      .inner-content { padding:1rem; }
+      .section { padding:.9rem; }
+      .form-container { padding:.85rem; }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- HEADER WITH LOGO -->
+  <!-- HEADER -->
   <header>
     <a href="https://shidlelodge601.org">
-      <img src="https://img1.wsimg.com/isteam/ip/1360334b-7327-47c2-8ca9-9c3529c88239/Shidle%20Masons_Logo_no%20background.png/:/rs=w:260,h:107,cg=true,m/cr=w:260,h:107/qt=q:95" alt="Shidle Lodge Logo">
+      <img src="https://img1.wsimg.com/isteam/ip/1360334b-7327-47c2-8ca9-9c3529c88239/Shidle%20Masons_Logo_no%20background.png/:/rs=w:260,h:107,cg=true,m/cr=w:260,h:107/qt=q:95" alt="Shidle Lodge Logo" loading="lazy" decoding="async">
     </a>
   </header>
 
-  <!-- NAV BAR UNDER LOGO -->
-  <nav class="event-nav">
-    <a href="/PMN">Past Master's Night</a>
+  <!-- NAV (wraps as needed) -->
+  <nav class="event-nav" aria-label="Event navigation">
+    <a href="/PMN">Past Master’s Night</a>
     <a href="/golf">Friend to Friend Golf Outing</a>
     <a href="/" class="active">Breakfast with Santa</a>
   </nav>
 
   <main>
     <div class="card">
-
       <!-- TITLE BAR -->
       <div class="title-bar">
         <h1>Breakfast with Santa</h1>
@@ -233,11 +250,10 @@
 
       <!-- CONTENT -->
       <div class="inner-content">
-
         <!-- EVENT DATE & LOCATION -->
         <div class="event-meta">
           <span class="highlight">Saturday, December 13, 2025 • 9:00–11:00 AM</span>
-          <span>Shidle Lodge No. 601 • 415 Main St • Irwin, PA 15642</span>
+          <span class="subline">Shidle Lodge No. 601 • 415 Main St • Irwin, PA 15642</span>
         </div>
 
         <!-- REGISTER BUTTON -->
@@ -278,21 +294,18 @@
           <iframe
             id="JotFormIFrame-253176060004041"
             title="Breakfast with Santa Signup"
-            onload="window.parent.scrollTo(0,0)"
+            onload="window.parent?.scrollTo?.(0,0)"
             allowtransparency="true"
             allow="geolocation; microphone; camera; fullscreen; payment"
             src="https://form.jotform.com/253176060004041"
-            frameborder="0"
-            style="min-width:100%;max-width:100%;height:900px;border:none;"
             scrolling="no">
           </iframe>
 
           <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
           <script>
-            window.jotformEmbedHandler("iframe[id='JotFormIFrame-253176060004041']", "https://form.jotform.com/");
+            window.jotformEmbedHandler?.("iframe[id='JotFormIFrame-253176060004041']", "https://form.jotform.com/");
           </script>
         </div>
-
       </div>
     </div>
   </main>
